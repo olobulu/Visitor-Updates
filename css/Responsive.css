@@ -1,0 +1,483 @@
+
+
+ /*===========responsive========*/
+ .menu-btn{
+  display: none;
+}
+@media(max-width:1050px) {
+  
+.logo img {
+  height: 10px;
+  border-radius: 5px;
+}
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 8px 13px;
+  transition: background 0.3s;
+}
+
+/* Submenu */
+.submenu {
+  display: none;
+  list-style: none;
+  position:absolute;
+  top: 100%;
+  left: 0;
+  width: 400px; /* Set a specific width for the submenu */
+  background:white;
+  padding: 5px 0;
+
+}
+.submenu li {
+  padding: 5px 10px;
+  width: calc(50% - 20px); /* Ensure 2 items per row */
+}
+/* Style only the <i> elements inside submenus */
+.submenu li a i {
+  color: #007BFF; /* Change icon color */
+  margin-right: 8px; /* Add space between icon and text */
+  font-size: 20px; /* Adjust icon size */
+  transition: color 0.3s ease; /* Add smooth hover transition */
+}  
+
+/* Hover effect */
+.submenu li a:hover i {
+  color: #27ae60; /* Change icon color on hover */
+}
+
+  .hero-content{
+     display: flex;
+     flex-direction: column; /* Normal column, no reverse */
+     align-items: center;
+     margin: 30px auto;
+  }
+  .hero-text{
+     margin-bottom: 40px;
+     padding: 30px;
+     margin-top: 0px;
+     width: 100%;
+  }
+ 
+}
+@media(max-width:950px){
+  .navigation{
+     justify-content: space-between;
+     width: 100%;
+     position: fixed;
+     height: 20vh;
+  }
+  .logo,
+  .nav-assessment-btn,
+  .menu-btn{
+     z-index: 106;
+  }
+  .logo{
+  position: fixed; /* Keeps the logo fixed on the screen */
+  top: 50px; /* Adjust as needed to align vertically with the menu-icon */
+  user-select: none; /* Prevents text selection */
+  z-index: 106; /* Ensures it appears above other elements */
+  }
+  .footer-container .logo{
+     margin-left: 0px;
+  }
+  .menu {
+     display: none;
+     position: absolute;
+     background-color: #ffffff;
+     width: 100%;
+     padding: 0px;
+     margin: 0px;
+     box-shadow: 2px 30px 30px rgba(0,0,0,0.06);
+     top: 100%;
+     left: 0px;
+  }
+  .menu::after {
+     content: '';
+     position: absolute;
+     left: 0px;
+     top: -100%;
+     background-color: #ffffff;
+     width: 100%;
+     height: 100%;
+  }
+  .menu li{
+     width: 100%;
+     margin: 0px;
+     padding: 0px;
+  }
+  .menu li a{
+     width: 100%;
+     height: 45px;
+     display: flex;
+     align-items: center;
+     padding: 0px 20px;
+     margin: 0px;
+  }
+  .menu-icon{
+    cursor: pointer;
+    position: fixed; /* Keeps the icon fixed on the screen */
+    top: 80px; /* Adjust as needed to set the vertical position */
+    right: 50px; /* Sets the horizontal position to the right */
+    user-select: none; /* Prevents text selection */
+    z-index: 106; /* Ensures it appears above other elements */
+  }
+  .menu-icon .nav-icon{
+     background-color: #181818;
+     display: block;
+     height: 2px;
+     position: relative;
+     width: 25px;
+     transition: all 0.2s ease-out;
+  }
+  .menu-icon .nav-icon::after,
+  .menu-icon .nav-icon::before{
+     background-color: #181818;
+     content: '';
+     height: 100%;
+     position: absolute;
+     transition: all 0.2s ease-out;
+     width: 100%;
+  }
+  .menu-icon .nav-icon::before{
+     top: 9px;
+  }
+  .menu-icon .nav-icon::after{
+     top: -9px;
+  }
+  .menu-btn:checked ~ .menu-icon .nav-icon::before {
+     transform: rotate(-45deg);
+     top: 0px;
+  }
+  .menu-btn:checked ~ .menu-icon .nav-icon::after {
+     transform: rotate(45deg);
+     top: 0px;
+  }
+  .menu-btn:checked ~ .menu-icon .nav-icon {
+     background-color: transparent;
+  }
+  .menu-btn{
+     display: none;
+  }
+  .menu-btn:checked ~ .menu{
+     display: block; /* Show the menu when menu-btn is checked */
+  }
+
+  /* General styles for the submenu */
+.submenu {
+  display: none; /* Hide submenu by default */
+  position: absolute;
+  background-color: #ffffff;
+  width: 200px; /* Set a fixed width for submenu */
+  padding: 10px 0; /* Add padding for submenu */
+  box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+  z-index: 100; /* Ensure submenu is above other elements */
+}
+
+/* Show submenu on hover */
+.menu li:hover .submenu {
+  display: block; /* Show submenu on hover */
+}
+
+/* Styles for submenu items */
+.submenu li {
+  width: 100%; /* Make submenu items full width */
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+.submenu li a {
+  display: flex; /* Flex display for alignment */
+  align-items: center; /* Center items vertically */
+  padding: 10px 20px; /* Add padding to submenu links */
+  color: #333; /* Text color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+/* Submenu link hover effect */
+.submenu li a:hover {
+  background-color: #f0f0f0; /* Background color on hover */
+}
+
+/* Icon styling in submenu */
+.submenu li a i {
+  margin-right: 10px; /* Space between icon and text */
+}
+
+/* Optional arrow indicator for dropdowns */
+.menu li a i.fa-chevron-down {
+  margin-left: auto; /* Push chevron icon to the right */
+  transition: transform 0.2s; /* Smooth transition for rotation */
+}
+
+/* Rotate chevron when submenu is open */
+.menu li:hover a i.fa-chevron-down {
+  transform: rotate(180deg); /* Rotate icon on hover */
+}
+  #our-story{
+     grid-template-columns: 1fr;
+  }
+  .our-story-img{
+     max-height: 400px;
+  }
+  .our-story-text{
+     padding: 30px;
+  }
+  #how-it-manifest{
+     grid-template-columns: 1fr;
+  }
+  #testimonials{
+     padding: 50px 0px;
+  }
+  .testimonials-img{
+     margin-right: auto;
+  }
+  .testimonials-img img{
+     width: 100%;
+  }
+  .testimonials-content{
+     grid-template-columns: 1fr;
+  }
+  .footer-container{
+     grid-template-columns: 1fr 1fr;
+     grid-gap: 40px;
+     display: grid;
+  }
+  .footer-container .logo{
+     margin-left: 0px;
+  }
+}
+
+
+@media(max-width: 720px) {
+  .navigation {
+    background-color: #f5e6e6fb;
+} 
+.hero-img{
+ display: none;
+}
+  .hero-text{
+    margin-top: 6vh; /* This matches the height of your navbar */
+   }
+  .hero-text h1{
+    text-transform:uppercase ;
+    font-size: 40px;
+    text-align: center
+  }
+  .animated-span { 
+    color: #3AAA35;
+    font-weight: bold;
+    animation: colorPulse 3s infinite, textShadowPulse 3s infinite;
+  }
+  
+  @keyframes colorPulse {
+    0% {
+      color: #3AAA35;
+    }
+    50% {
+      color: #28A745;
+    }
+    100% {
+      color: #3AAA35;
+    }
+  }
+  
+  @keyframes textShadowPulse {
+    0%, 100% {
+      text-shadow: 0px 0px 5px #009FE3, 0px 0px 10px #009FE3;
+    }
+    50% {
+      text-shadow: 0px 0px 15px #009FE3, 0px 0px 20px #009FE3;
+    }
+  }  
+  .hero-text p{
+    text-align: center
+  }
+ .our-story-text h2,
+ .blogs-heading h2,
+ .how-it-manifest-left h3,
+ .how-it-manifest-right h3,
+ .team-heading h3,
+ .testimonials-heading h3{
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+ }
+ 
+.hero-text-btns {
+ margin-top: 5px;
+}
+.hero-text-btns a{
+  width: 100%;
+  margin-top: 5px;
+  text-align: center; 
+}
+.nav-assessment-btn{
+  margin-left: 10px;
+}
+/*==============slides/functions===============*/
+.services-slider {
+ width: 100%;
+ height: 80vh; /* Overall height of the services slider */
+ display: flex; /* Enable flexbox to center the slider-wrapper */
+ justify-content: center; /* Center horizontally */
+ align-items: center; /* Center vertically */
+
+}
+.slider-wrapper {
+ width: 100%; /* Full width for the slider */
+ max-height: 50vh; /* Limit the maximum height for better control */
+ overflow: hidden; /* Hide overflow if necessary */
+ position: relative; /* Keep position relative for inner content */
+}
+.service img {
+ width: 100%;
+}
+
+/*==============slides/functions ends===============*/
+.story-number-box > div {
+  max-width: 40%;
+}
+
+.story-number-box strong {
+  font-size: 1.5rem;
+}
+
+.story-number-box span {
+  font-size: 1rem; /* Adjust font size for the span text */
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.manifest-image{
+  background-color: rgba(143, 143, 150, 0.39);
+   width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.manifest-image img{
+   width: 400px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+}
+
+
+@media(max-width: 480px) {
+ .hero-text{
+    
+  }
+.our-story-text h2,
+.blogs-heading h2,
+.how-it-manifest-left h3,
+.how-it-manifest-right h3,
+.team-heading h3,
+.testimonials-heading h3{
+   font-size: 1rem;
+   line-height: 2rem;
+}
+.hero-text-btns a{
+ width: 100%;
+ margin-top: 5px;
+ text-align: center;
+}
+.nav-assessment-btn{
+ display: none;
+}
+.menu-btn{
+ float: right;
+}
+/*==============slides/functions===============*/
+.services-slider {
+ height: auto; /* Adjust height to auto for smaller screens */
+ padding: 10px; /* Reduce padding */
+}
+
+.services-slider h1 {
+ font-size: 1em; /* Adjust font size for better visibility */
+ margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.slider-wrapper {
+ width: 500%; /* Adjust width to accommodate more items */
+ animation: none; /* Disable animation for smaller screens */
+ animation: slide 10s infinite;
+}
+
+.service {
+ width: 100%; /* Full width for each service item */
+ padding: 10px; /* Reduce padding for better fit */
+}
+
+.service img {
+ border-radius: 0%; /* Slightly adjust border radius */
+ margin-top: 5px; /* Add margin for spacing */
+}
+
+/*==============slides end===============*/
+
+.story-number-box > div {
+ max-width: 40%;
+}
+
+.story-number-box strong {
+ font-size: 1.5rem;
+}
+
+.story-number-box span {
+ font-size: 1rem; /* Adjust font size for the span text */
+ text-transform: uppercase;
+ font-size: 20px;
+ font-weight: bold;
+}
+
+.manifest-image{
+ background-color: rgba(143, 143, 150, 0.39);
+  width: 500px;
+ margin: 0 auto;
+ margin-top: 20px;
+}
+
+.manifest-image img{
+  width: 400px;
+ margin: 0 auto;
+ margin-top: 20px;
+}
+
+/*==============what-we-provide===============*/
+.what-we-provide{
+ width: 100%;
+ margin: 30px auto;
+ margin-left: 30px;
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-gap: 10px;
+ align-items: center;
+ justify-items: center;
+}
+
+.story-number-box > div {
+ max-width: 60%;
+}
+/* Container for boxes */
+.how-it-manifest-box {
+ width: 100%; /* Full width on very small screens (320px and smaller) */
+}
+
+.manifest-image{
+ background-color: rgba(143, 143, 150, 0.39);
+  width: 100%;
+ margin: 0 auto;
+ margin-top: 20px;
+}
+
+.manifest-image img{
+  width: 50%;
+ margin: 0 auto;
+ margin-top: 20px;
+}
+}
+
